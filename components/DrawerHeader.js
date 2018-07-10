@@ -25,20 +25,25 @@ class DrawerHeader extends Component {
     constructor(props) {
 
         super(props);
-        this.props.name = "John Doe";
+
+        this.state = {
+            name: 'John Doe',
+            email: null,
+            picture: 'https://pbs.twimg.com/profile_images/680053476500631552/Yvw3yGfe_400x400.jpg',
+        };
 
     }
 
     async loginWithFacebook() {
 
         //ENTER YOUR APP ID 
-        const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('1957052991253516', { permissions: ['public_profile','email'] })
+        const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('1957052991253516', { permissions: ['public_profile', 'email'] })
 
         if (type == 'success') {
 
             const credential = firebase.auth.FacebookAuthProvider.credential(token)
 
-            firebase.auth().signInWithCredential(credential).catch((error) => {
+            firebase.auth().signInAndRetrieveDataWithCredential(credential).catch((error) => {
                 console.log(error)
             })
         }
@@ -48,8 +53,12 @@ class DrawerHeader extends Component {
 
         firebase.auth().onAuthStateChanged((user) => {
             if (user != null) {
-                console.log(user)
-                this.props.name = user.displayName;
+                console.log(user.providerData[0].displayName);
+                this.setState({ 
+                    name: user.providerData[0].displayName, 
+                    email: user.providerData[0].email,
+                    picture: user.providerData[0].photoURL + '?type=large',
+                 });
             }
         })
     }
@@ -59,13 +68,12 @@ class DrawerHeader extends Component {
         return (
 
             <ScrollView style={{ backgroundColor: '#dddddd' }}>
-
                 <View style={styles.profile}>
                     <View>
-                        <Thumbnail source={{ uri: 'https://pbs.twimg.com/profile_images/680053476500631552/Yvw3yGfe_400x400.jpg' }} />
+                        <Thumbnail source={{ uri: this.state.picture }} />
                     </View>
                     <View style={styles.textContainer}>
-                        <Text style={styles.userName}>{this.props.name}</Text>
+                        <Text style={styles.userName}>{this.state.name}</Text>
                         <Text style={styles.amount}>R$ 430,00</Text>
                     </View>
                 </View>
