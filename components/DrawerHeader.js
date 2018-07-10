@@ -68,6 +68,8 @@ class DrawerHeader extends Component {
         return (
 
             <ScrollView style={{ backgroundColor: '#dddddd' }}>
+            {
+                this.state.email != null ?
                 <View style={styles.profile}>
                     <View>
                         <Thumbnail source={{ uri: this.state.picture }} />
@@ -77,12 +79,15 @@ class DrawerHeader extends Component {
                         <Text style={styles.amount}>R$ 430,00</Text>
                     </View>
                 </View>
+                :
                 <View style={styles.login}>
                     <Thumbnail source={{ uri: 'https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_grey_512dp.png' }} />
                     <TouchableOpacity style={styles.facebook} onPress={() => this.loginWithFacebook()}>
                         <Text style={styles.facebookText}>Login with Facebook</Text>
                     </TouchableOpacity>
                 </View>
+            }
+
                 <View style={styles.cause}>
                     <View>
                         <Text style={styles.supportCauseTitle}>All the revenue goes to</Text>
