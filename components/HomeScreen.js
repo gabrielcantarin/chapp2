@@ -12,11 +12,11 @@ import Calculator from './Calculator';
 class HomeScreen extends Component {
   static navigationOptions = () => ({
     title: "Home",
-    headerLeft:
-      <TouchableOpacity>
-        <Icon ios='ios-menu' android="md-menu" style={{ paddingLeft: 10, paddingTop: 50, backgroundColor: 'red', }} onPress={() => alert()} />
-      </TouchableOpacity>
-    ,
+    // headerLeft:
+    //   <TouchableOpacity>
+    //     <Icon ios='ios-menu' android="md-menu" style={{ paddingLeft: 10, paddingTop: 50, backgroundColor: 'red', }} onPress={() => alert()} />
+    //   </TouchableOpacity>
+    // ,
     drawerLabel: 'Calculadora',
   })
 
@@ -25,8 +25,7 @@ class HomeScreen extends Component {
     return (
 
       <Container>
-        <Content
-          contentContainerStyle={{ flex: 1 }}>
+        <Content contentContainerStyle={{ flex: 1 }}>
           <Calculator onDrawerActivator={() => {
             this.props.navigation.openDrawer()
           }} />

@@ -69,7 +69,7 @@ class DrawerHeader extends Component {
 
             <ScrollView style={{ backgroundColor: '#dddddd' }}>
             {
-                this.state.email == null ?
+                this.state.email != null ?
                 <View style={styles.profile}>
                     <View>
                         <Thumbnail source={{ uri: this.state.picture }} />

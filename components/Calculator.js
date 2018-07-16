@@ -109,8 +109,6 @@ class Calculator extends Component {
 
             }
         });
-
-
     }
 
     render() {
@@ -118,7 +116,7 @@ class Calculator extends Component {
             <View style={styles.container}>
                 <StatusBar barStyle="light-content" hidden={false} />
                 <View style={styles.ads}>
-                    <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: 'white', marginLeft: 16 }}
+                    {/* <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: 'white', marginLeft: 16 }}
                         onPress={() => {
                             if (this.props.onDrawerActivator) {
                                 this.props.onDrawerActivator()
@@ -126,7 +124,7 @@ class Calculator extends Component {
                         }}
                     >
                         <View></View>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <AdMobBanner
                         style={styles.bottomBanner}
                         bannerSize="smartBannerPortrait"
