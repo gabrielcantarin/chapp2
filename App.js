@@ -10,12 +10,12 @@ const MyApp = createDrawerNavigator({
   Home: {
     screen: HomeScreen
   },
-  Settings: {
-    screen: SettingsScreen
-  },
-  Login: {
-    screen: LoginPage
-  }
+  // Test: {
+  //   screen: SettingsScreen
+  // },
+  // Logout: {
+  //   screen: LoginPage
+  // }
 }, {
   initialRouteName:'Home',
     contentComponent: props =>

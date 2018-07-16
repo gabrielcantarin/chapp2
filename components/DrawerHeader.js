@@ -69,7 +69,7 @@ class DrawerHeader extends Component {
 
             <ScrollView style={{ backgroundColor: '#dddddd' }}>
             {
-                this.state.email != null ?
+                this.state.email == null ?
                 <View style={styles.profile}>
                     <View>
                         <Thumbnail source={{ uri: this.state.picture }} />
@@ -97,6 +97,8 @@ class DrawerHeader extends Component {
                         <Image style={styles.causeImage} source={{ uri: 'https://static1.squarespace.com/static/53dcf4f6e4b0461efc56807b/t/599c8e37ccc5c54ab62a52c3/1503432279563/Donation-Icon.jpg' }} />
                     </View>
                 </View>
+                <DrawerItems {...this.props} />
+
                 <AdMobBanner
                     style={styles.bottomBanner}
                     bannerSize="smartBannerPortrait"
@@ -107,7 +109,6 @@ class DrawerHeader extends Component {
                     testDeviceID="EMULATOR"
                     didFailToReceiveAdWithError={this.bannerError}
                 />
-                <DrawerItems {...this.props} />
             </ScrollView >
         )
     }
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight + 30, flexDirection: 'row', padding: 16, height: 150, alignItems: 'center', backgroundColor: 'black'
     },
     login: {
-        paddingTop: StatusBar.currentHeight + 30, flexDirection: 'column', padding: 16, height: 150, alignItems: 'center', backgroundColor: 'black'
+        paddingTop: StatusBar.currentHeight + 30, flexDirection: 'column', paddingTop: 50, height: 200, alignItems: 'center', backgroundColor: 'black'
     },
     facebook: {
         backgroundColor: '#425bb4',
