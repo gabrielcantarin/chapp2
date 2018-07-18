@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "ChApp Calculator",
-    "icon": "./img/logo1536.png",
-    "version": "2.0.1",
+    "icon": "./img/2logo1024.png",
+    "version": "2.0.2",
     "slug": "ChAppCalculator",
     "orientation":"portrait",
     "sdkVersion": "27.0.0",
@@ -11,7 +11,7 @@
     },
     "android": {
       "package": "co.charityapp.ios",
-      "versionCode": 2
+      "versionCode": 3
     }
   }
 }

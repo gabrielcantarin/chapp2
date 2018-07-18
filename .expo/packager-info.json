@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 2333,
-  "expoServerNgrokUrl": "https://ak-xzd.gabrielcantarin.chapp2.exp.direct",
-  "packagerNgrokUrl": "https://packager.ak-xzd.gabrielcantarin.chapp2.exp.direct",
-  "ngrokPid": 2353
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
