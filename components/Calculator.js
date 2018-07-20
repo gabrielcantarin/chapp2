@@ -11,6 +11,7 @@ class Calculator extends Component {
             numberA: 0,
             numberB: 0,
             operator: null,
+            reset: 0,
         };
 
     }
@@ -19,6 +20,12 @@ class Calculator extends Component {
             if (number == "." && this.state.display.toString().includes(".")) {
                 return false;
             } else {
+                if(this.state.reset == 1){
+                    this.setState({ 
+                        display: 0,
+                        reset: 0,
+                    })
+                }
                 this.setState({ display: this.state.display.toString() + number.toString() })
             }
 
@@ -41,6 +48,7 @@ class Calculator extends Component {
             numberA: 0,
             numberB: 0,
             display: 0,
+            reset: 0,
         })
     }
 
@@ -55,7 +63,7 @@ class Calculator extends Component {
             this.setState({
                 operator: operation,
                 numberA: Number(this.state.display),
-                display: 0,
+                reset: 1,
             })
         }
     }
@@ -73,7 +81,12 @@ class Calculator extends Component {
                             numberA: this.state.display,
                         })
                     } else {
-                        alert('fail');
+                        if(this.state.numberA && this.state.operator){
+                            this.setState({
+                                display: this.state.numberA * this.state.numberA,
+                                numberA: this.state.display,
+                            })
+                        }
                     }
                     return true;
                 case "/":
@@ -83,7 +96,12 @@ class Calculator extends Component {
                             numberA: this.state.display,
                         })
                     } else {
-                        alert('fail');
+                        if(this.state.numberA && this.state.operator){
+                            this.setState({
+                                display: this.state.numberA / this.state.numberA,
+                                numberA: this.state.display,
+                            })
+                        }
                     }
                     return true;
                 case "-":
@@ -93,7 +111,12 @@ class Calculator extends Component {
                             numberA: this.state.display,
                         })
                     } else {
-                        alert('fail');
+                        if(this.state.numberA && this.state.operator){
+                            this.setState({
+                                display: this.state.numberA - this.state.numberA,
+                                numberA: this.state.display,
+                            })
+                        }
                     }
                     return true;
                 case "+":
@@ -103,7 +126,12 @@ class Calculator extends Component {
                             numberA: this.state.display,
                         })
                     } else {
-                        alert('fail');
+                        if(this.state.numberA && this.state.operator){
+                            this.setState({
+                                display: this.state.numberA + this.state.numberA,
+                                numberA: this.state.display,
+                            })
+                        }
                     }
                     return true;
 

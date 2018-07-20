@@ -91,7 +91,7 @@ class DrawerHeader extends Component {
                 <View style={styles.cause}>
                     <View>
                         <Text style={styles.supportCauseTitle}>All the revenue goes to</Text>
-                        <Text style={styles.supportCauseName}>Socials Causes</Text>
+                        <Text style={styles.supportCauseName}>Social Causes</Text>
                     </View>
                     <View>
                         <Image style={styles.causeImage} source={{ uri: 'https://static1.squarespace.com/static/53dcf4f6e4b0461efc56807b/t/599c8e37ccc5c54ab62a52c3/1503432279563/Donation-Icon.jpg' }} />
